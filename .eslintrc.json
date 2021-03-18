@@ -1,0 +1,89 @@
+{
+  "extends": ["react-app", "prettier"],
+  "plugins": ["react", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "endOfLine": "auto",
+        "printWidth": 120,
+        "tabWidth": 2,
+        "semi": false,
+        "arrowParens": "avoid"
+      }
+    ],
+    "no-console": [
+      "off",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-unused-vars": [
+      "off",
+      {
+        "args": "none"
+      }
+    ],
+    "max-depth": [
+      "warn",
+      4
+    ],
+    "id-length": [
+      "warn",
+      {
+        "exceptions": [
+          "i",
+          "j",
+          "e",
+          "t"
+        ],
+        "min": 2
+      }
+    ],
+    "no-lonely-if": [
+      "error"
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "react/state-in-constructor": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/aria-role": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-filename-extension": "off",
+    "react/no-danger": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-did-update-set-state": "off",
+    "import/prefer-default-export": "off",
+    "spaced-comment": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-param-reassign": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
