@@ -5,10 +5,16 @@ import { playerDeckActions } from '../../../../state/table/player-deck/playerDec
 import { Card } from '../../../../model/card/card'
 import { getRandomCard } from '../../../../utils/card-utils'
 import { ChestPair } from '../../../../model/chest/chest-pair'
+import { ChestComponent } from './chest-component/chestComponent'
+import { opponentsDecksActions } from '../../../../state/table/opponents-deck/opponentsDecksSlice'
+import { OpponentComponent } from './opponent/opponentComponent'
 
 export const GameTable = () => {
   const playerHand = useSelector((state: RootState) => state.player.hand)
   const playerChestItems = useSelector((state: RootState) => state.player.chest)
+
+  const opponents = useSelector((state: RootState) => state.opponents.opponents)
+
   const dispatch = useDispatch<AppDispatch>()
 
   const addRandomCardToHand = () => {
@@ -25,12 +31,19 @@ export const GameTable = () => {
     dispatch(playerDeckActions.removeAllCards())
   }
 
+  const addOpponent = () => {
+    dispatch(opponentsDecksActions.addOpponent())
+  }
+
   return (
     <>
       <h1>Game Table</h1>
       <button onClick={addRandomCardToHand}>Add random card</button>
       <button onClick={addRandomChestItem}>Add random chest item</button>
       <button onClick={deleteAllCards}>Delete all cards</button>
+      <br />
+      <button onClick={addOpponent}>Add opponent</button>
+
       <div>
         <div>
           <h3>Hand</h3>
@@ -45,22 +58,19 @@ export const GameTable = () => {
           )}
         </div>
         <div>
-          <h3>Chest</h3>
-          {playerChestItems.length ? (
-            playerChestItems.map(chestItem => (
-              <div>
-                <p>{`Top card: ${chestItem.topCard.rank.name} ${chestItem.topCard.suit.logo}`}</p>
-                {chestItem.bottomCard ? (
-                  <p>{`Bottom card: ${chestItem.bottomCard.rank.name} ${chestItem.bottomCard.suit.logo}`}</p>
-                ) : (
-                  <p>{`Bottom card: unknown`}</p>
-                )}
-              </div>
-            ))
-          ) : (
-            <p>you have no chest items</p>
-          )}
+          <ChestComponent chestItems={playerChestItems} />
         </div>
+      </div>
+
+      <div>
+        <h3>Opponents</h3>
+        {opponents.map(opp => (
+          // <div>
+          //   <p>`${opp.hand.handCardCount} in the hand`</p>
+          //   <ChestComponent chestItems={opp.hand.chest} />
+          // </div>
+          <OpponentComponent opponent={opp} />
+        ))}
       </div>
     </>
   )
