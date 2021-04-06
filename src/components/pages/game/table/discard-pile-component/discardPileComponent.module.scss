@@ -4,6 +4,15 @@
   padding: 10px;
 
   position: fixed;
-  left: 0;
+  left: 60px;
   top: 40%;
+
+  @for $i from 1 through 100 {
+    .pile > *:nth-child(#{$i}) {
+      position: absolute;
+      left: random(80) - 40 + px;
+      top: random(80) - 40 + px;
+      transform: rotate(random(100) - 50 + deg);
+    }
+  }
 }

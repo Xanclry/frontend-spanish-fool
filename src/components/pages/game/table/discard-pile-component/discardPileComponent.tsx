@@ -10,7 +10,7 @@ export const DiscardPileComponent = ({ cardsAmount }: DiscardPileProps) => {
   const cards = Array(cardsAmount).fill(<CardComponent card={null} />)
   return (
     <div className={styles.mainWrap}>
-      <>{cards}</>
+      <div className={styles.pile}>{cards}</div>
     </div>
   )
 }
