@@ -1,9 +1,15 @@
 .mainWrap {
   border: #ff881a 2px solid;
-  margin: 20px;
   padding: 10px;
 
   position: fixed;
   bottom: 0;
   width: 100%;
+
+  .cardsWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }

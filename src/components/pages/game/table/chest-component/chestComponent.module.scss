@@ -1,7 +1,12 @@
 .chestWrap {
   border: green 1px solid;
-  padding: 10px;
+  padding: 10px 30%;
   margin: 2px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   .chestItemWrap {
     border: gray 1px solid;
     margin: 2px;

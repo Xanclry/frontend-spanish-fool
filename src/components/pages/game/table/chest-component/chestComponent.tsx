@@ -9,7 +9,6 @@ interface ChestComponentProps {
 export const ChestComponent = ({ chestItems }: ChestComponentProps) => {
   return (
     <div className={styles.chestWrap}>
-      <h3>Chest</h3>
       {chestItems.length ? (
         chestItems.map(item => (
           <div className={styles.chestItemWrap}>

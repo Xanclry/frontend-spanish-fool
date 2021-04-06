@@ -3,7 +3,6 @@ export interface Rank {
 }
 
 export const Ranks: Rank[] = [
-  { name: 'Ace' },
   { name: '2' },
   { name: '3' },
   { name: '4' },
@@ -16,4 +15,5 @@ export const Ranks: Rank[] = [
   { name: 'Jack' },
   { name: 'Queen' },
   { name: 'King' },
+  { name: 'Ace' },
 ]
