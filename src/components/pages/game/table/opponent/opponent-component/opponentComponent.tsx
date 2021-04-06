@@ -1,11 +1,11 @@
 import React from 'react'
-import { Opponent } from '../../../../../model/opponent/opponent'
-import { ChestComponent } from '../chest-component/chestComponent'
+import { Opponent } from '../../../../../../model/opponent/opponent'
+import { ChestComponent } from '../../chest-component/chestComponent'
 import styles from './opponentComponent.module.scss'
 import { useDispatch } from 'react-redux'
-import { AppDispatch } from '../../../../../state'
-import { opponentsDecksActions } from '../../../../../state/table/opponents-deck/opponentsDecksSlice'
-import { getRandomCard } from '../../../../../utils/card-utils'
+import { AppDispatch } from '../../../../../../state'
+import { opponentsDecksActions } from '../../../../../../state/table/opponents-deck/opponentsDecksSlice'
+import { getRandomCard } from '../../../../../../utils/card-utils'
 
 interface OpponentProps {
   opponent: Opponent

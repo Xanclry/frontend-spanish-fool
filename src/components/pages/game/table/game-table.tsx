@@ -5,13 +5,13 @@ import { playerDeckActions } from '../../../../state/table/player-deck/playerDec
 import { Card } from '../../../../model/card/card'
 import { getRandomCard } from '../../../../utils/card-utils'
 import { ChestPair } from '../../../../model/chest/chest-pair'
-import { ChestComponent } from './chest-component/chestComponent'
 import { opponentsDecksActions } from '../../../../state/table/opponents-deck/opponentsDecksSlice'
-import { OpponentComponent } from './opponent/opponentComponent'
 import { CardStackComponent } from './card-stack-component/cardStackComponent'
 import { cardStackActions } from '../../../../state/table/card-stack/cardStackSlice'
 import { DiscardPileComponent } from './discard-pile-component/discardPileComponent'
 import { discardPileActions } from '../../../../state/table/discard-pile/discardPileSlice'
+import { OpponentsGroup } from './opponent/opponentsGroup'
+import { PlayerHand } from './player/hand/playerHand'
 
 export const GameTable = () => {
   const playerHand = useSelector((state: RootState) => state.player.hand)
@@ -72,30 +72,9 @@ export const GameTable = () => {
       <button onClick={() => addCardsToDiscardPile(1)}>Add one card to discard pile</button>
       <button onClick={clearDiscardPile}>Clear discard pile</button>
 
-      <div>
-        <div>
-          <h3>Hand</h3>
-          {playerHand.length ? (
-            playerHand.map(card => (
-              <div>
-                <p>{`${card.rank.name} ${card.suit.logo}`}</p>
-              </div>
-            ))
-          ) : (
-            <p>you have no cards</p>
-          )}
-        </div>
-        <div>
-          <ChestComponent chestItems={playerChestItems} />
-        </div>
-      </div>
+      <PlayerHand cards={playerHand} chestItems={playerChestItems} />
 
-      <div>
-        <h3>Opponents</h3>
-        {opponents.map(opp => (
-          <OpponentComponent opponent={opp} />
-        ))}
-      </div>
+      <OpponentsGroup opponents={opponents} />
       <div>
         <CardStackComponent cards={cardStack} />
       </div>
