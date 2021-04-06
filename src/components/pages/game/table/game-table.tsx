@@ -29,7 +29,7 @@ export const GameTable = () => {
   }
 
   const addRandomChestItem = () => {
-    const newChestPair: ChestPair = { topCard: getRandomCard(), bottomCard: getRandomCard() }
+    const newChestPair: ChestPair = { topCard: getRandomCard(), bottomCard: null }
     dispatch(playerDeckActions.addCardToChest(newChestPair))
   }
 

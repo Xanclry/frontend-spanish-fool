@@ -3,6 +3,7 @@ import { Card } from '../../../../../../model/card/card'
 import { ChestPair } from '../../../../../../model/chest/chest-pair'
 import { ChestComponent } from '../../chest-component/chestComponent'
 import styles from './playerHand.module.scss'
+import { CardComponent } from '../../card-component/cardComponent'
 
 interface Props {
   cards: Card[]
@@ -17,15 +18,7 @@ export const PlayerHand = ({ cards, chestItems }: Props) => {
       </div>
       <div>
         <h3>Hand</h3>
-        {cards.length ? (
-          cards.map(card => (
-            <div>
-              <p>{`${card.rank.name} ${card.suit.logo}`}</p>
-            </div>
-          ))
-        ) : (
-          <p>you have no cards</p>
-        )}
+        {cards.length ? cards.map(card => <CardComponent card={card} />) : <p>you have no cards</p>}
       </div>
     </div>
   )

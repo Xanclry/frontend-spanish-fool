@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../../../../../state'
 import { opponentsDecksActions } from '../../../../../../state/table/opponents-deck/opponentsDecksSlice'
 import { getRandomCard } from '../../../../../../utils/card-utils'
+import { OpponentHand } from './hand/opponentHand'
 
 interface OpponentProps {
   opponent: Opponent
@@ -38,7 +39,10 @@ export const OpponentComponent = ({ opponent }: OpponentProps) => {
       <button onClick={addChestItem}>Add a random chest item</button>
 
       <p>My id: {playerId}</p>
-      <p>{opponent.hand.handCardCount} in the hand</p>
+      <div>
+        <OpponentHand cardAmount={opponent.hand.handCardCount} />
+      </div>
+      {/*<p>{opponent.hand.handCardCount} in the hand</p>*/}
       <ChestComponent chestItems={opponent.hand.chest} />
     </div>
   )
