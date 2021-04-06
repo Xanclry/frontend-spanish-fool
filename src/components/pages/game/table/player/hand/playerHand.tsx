@@ -25,7 +25,7 @@ export const PlayerHand = ({ cards, chestItems }: Props) => {
         <ChestComponent chestItems={chestItems} />
       </div>
       <div className={styles.cardsWrap}>
-        {sortedCards.length ? sortedCards.map(card => <CardComponent card={card} />) : <p>you have no cards</p>}
+        {sortedCards.length ? sortedCards.map(card => <CardComponent card={card} />) : null}
       </div>
     </div>
   )

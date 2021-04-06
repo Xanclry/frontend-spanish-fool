@@ -1,3 +1,6 @@
+$card-shift: 80;
+$card-rotation: 100;
+
 .mainWrap {
   border: blue 1px solid;
   margin: 2px;
@@ -10,9 +13,9 @@
   @for $i from 1 through 100 {
     .pile > *:nth-child(#{$i}) {
       position: absolute;
-      left: random(80) - 40 + px;
-      top: random(80) - 40 + px;
-      transform: rotate(random(100) - 50 + deg);
+      left: random($card-shift) - $card-shift/2 + px;
+      top: random($card-shift) - $card-shift/2 + px;
+      transform: rotate(random($card-rotation) - $card-rotation/2 + deg);
     }
   }
 }

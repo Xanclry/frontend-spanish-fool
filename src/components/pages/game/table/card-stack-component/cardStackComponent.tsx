@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from '../../../../../model/card/card'
 import styles from './cardStackComponent.module.scss'
+import { CardComponent } from '../card-component/cardComponent'
 
 interface CardStackProps {
   cards: Card[]
@@ -9,12 +10,11 @@ interface CardStackProps {
 export const CardStackComponent = ({ cards }: CardStackProps) => {
   return (
     <div className={styles.mainWrap}>
-      <h2>Card stack</h2>
-      {cards.map(card => (
-        <p>
-          {card.rank.name} {card.suit.logo}
-        </p>
-      ))}
+      <div className={styles.cardPile}>
+        {cards.map(card => (
+          <CardComponent card={card} />
+        ))}
+      </div>
     </div>
   )
 }
