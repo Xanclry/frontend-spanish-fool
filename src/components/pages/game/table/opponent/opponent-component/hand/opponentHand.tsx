@@ -1,5 +1,6 @@
 import React from 'react'
 import { CardComponent } from '../../../card-component/cardComponent'
+import styles from './opponentHand.module.scss'
 
 interface Props {
   cardAmount: number
@@ -7,5 +8,9 @@ interface Props {
 
 export const OpponentHand = ({ cardAmount }: Props) => {
   const cards = Array(cardAmount).fill(<CardComponent card={null} />)
-  return <>{cards}</>
+  return (
+    <div className={styles.mainWrap}>
+      <div className={styles.handWrap}>{cards}</div>
+    </div>
+  )
 }

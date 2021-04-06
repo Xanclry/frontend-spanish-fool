@@ -2,4 +2,6 @@ import { createBrowserHistory } from 'history'
 
 const history = createBrowserHistory()
 
-export { history }
+const debugMode = true
+
+export { history, debugMode }

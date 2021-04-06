@@ -1,4 +1,10 @@
 .opponentWrap {
+  width: 500px;
+
   border: black 1px solid;
   margin: 5px;
+
+  .chestWrap {
+    margin-left: 400px;
+  }
 }

@@ -9,16 +9,18 @@ interface ChestComponentProps {
 export const ChestComponent = ({ chestItems }: ChestComponentProps) => {
   return (
     <div className={styles.chestWrap}>
-      {chestItems.length ? (
-        chestItems.map(item => (
-          <div className={styles.chestItemWrap}>
-            <CardComponent card={item.topCard} />
-            <CardComponent card={item.bottomCard} />
-          </div>
-        ))
-      ) : (
-        <p>No chest items</p>
-      )}
+      {chestItems.length
+        ? chestItems.map(item => (
+            <div className={styles.chestItemWrap}>
+              <span className={styles.topCard}>
+                <CardComponent card={item.topCard} />
+              </span>
+              <span className={styles.bottomCard}>
+                <CardComponent card={item.bottomCard} />
+              </span>
+            </div>
+          ))
+        : null}
     </div>
   )
 }

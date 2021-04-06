@@ -1,14 +1,30 @@
 .chestWrap {
-  border: green 1px solid;
+  //border: green 1px solid;
   padding: 10px 30%;
   margin: 2px;
+  width: max-content;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   .chestItemWrap {
-    border: gray 1px solid;
+    position: relative;
+    width: 90px;
+    .topCard {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bottomCard {
+      position: absolute;
+      left: 20px;
+      bottom: -15px;
+      z-index: -1;
+    }
+
+
+    //border: gray 1px solid;
     margin: 2px;
     padding: 2px;
   }

@@ -12,6 +12,8 @@ import { DiscardPileComponent } from './discard-pile-component/discardPileCompon
 import { discardPileActions } from '../../../../state/table/discard-pile/discardPileSlice'
 import { OpponentsGroup } from './opponent/opponentsGroup'
 import { PlayerHand } from './player/hand/playerHand'
+import styles from './game-table.module.scss'
+import { debugMode } from '../../../../config'
 
 export const GameTable = () => {
   const playerHand = useSelector((state: RootState) => state.player.hand)
@@ -59,19 +61,21 @@ export const GameTable = () => {
 
   return (
     <>
-      <div>
-        <button onClick={addRandomCardToHand}>Add random card</button>
-        <button onClick={addRandomChestItem}>Add random chest item</button>
-        <button onClick={deleteAllCards}>Delete all cards</button>
-        <br />
-        <button onClick={addOpponent}>Add opponent</button>
-        <br />
-        <button onClick={addRandomCardToStack}>Add card to stack</button>
-        <button onClick={clearCardStack}>Clear card stack</button>
-        <br />
-        <button onClick={() => addCardsToDiscardPile(1)}>Add one card to discard pile</button>
-        <button onClick={clearDiscardPile}>Clear discard pile</button>
-      </div>
+      {debugMode && (
+        <div className={styles.debugPanel}>
+          <button onClick={addRandomCardToHand}>Add random card</button>
+          <button onClick={addRandomChestItem}>Add random chest item</button>
+          <button onClick={deleteAllCards}>Delete all cards</button>
+          <br />
+          <button onClick={addOpponent}>Add opponent</button>
+          <br />
+          <button onClick={addRandomCardToStack}>Add card to stack</button>
+          <button onClick={clearCardStack}>Clear card stack</button>
+          <br />
+          <button onClick={() => addCardsToDiscardPile(1)}>Add one card to discard pile</button>
+          <button onClick={clearDiscardPile}>Clear discard pile</button>
+        </div>
+      )}
 
       <PlayerHand cards={playerHand} chestItems={playerChestItems} />
 

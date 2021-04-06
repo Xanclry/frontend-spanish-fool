@@ -7,6 +7,7 @@ import { AppDispatch } from '../../../../../../state'
 import { opponentsDecksActions } from '../../../../../../state/table/opponents-deck/opponentsDecksSlice'
 import { getRandomCard } from '../../../../../../utils/card-utils'
 import { OpponentHand } from './hand/opponentHand'
+import { debugMode } from '../../../../../../config'
 
 interface OpponentProps {
   opponent: Opponent
@@ -34,16 +35,20 @@ export const OpponentComponent = ({ opponent }: OpponentProps) => {
 
   return (
     <div className={styles.opponentWrap}>
-      <button onClick={deleteOpponent}>Delete the opponent</button>
-      <button onClick={addCard}>Add a card</button>
-      <button onClick={addChestItem}>Add a random chest item</button>
+      {debugMode && (
+        <div>
+          <button onClick={deleteOpponent}>Delete the opponent</button>
+          <button onClick={addCard}>Add a card</button>
+          <button onClick={addChestItem}>Add a random chest item</button>
+        </div>
+      )}
 
-      <p>My id: {playerId}</p>
       <div>
         <OpponentHand cardAmount={opponent.hand.handCardCount} />
       </div>
-      {/*<p>{opponent.hand.handCardCount} in the hand</p>*/}
-      <ChestComponent chestItems={opponent.hand.chest} />
+      <div>
+        <ChestComponent chestItems={opponent.hand.chest} />
+      </div>
     </div>
   )
 }

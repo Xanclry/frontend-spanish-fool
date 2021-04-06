@@ -1,0 +1,18 @@
+$rotation-start: -90;
+$rotation-modifier: 5;
+
+.mainWrap {
+  position: absolute;
+
+  .handWrap {
+    padding-left: -80px;
+  }
+  @for $i from 1 through 100 {
+    .handWrap > *:nth-child(#{$i}) {
+      position: absolute;
+      left: 50%;
+      transform: rotate($rotation-start + $i*$rotation-modifier + deg);
+      transform-origin: top right;
+    }
+  }
+}

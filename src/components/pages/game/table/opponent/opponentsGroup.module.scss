@@ -1,10 +1,18 @@
 .mainWrap {
+  position: fixed;
+  width: 100%;
+
   border: deeppink;
   border: 2px solid;
   //margin: 2px;
   padding: 10px;
-  position: fixed;
   height: 20%;
   top: 0;
-  left: 50%;
+
+  .opponentsWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }

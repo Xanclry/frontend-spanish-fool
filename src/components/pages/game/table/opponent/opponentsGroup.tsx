@@ -10,10 +10,11 @@ interface Props {
 export const OpponentsGroup = ({ opponents }: Props) => {
   return (
     <div className={styles.mainWrap}>
-      <h3>Opponents group</h3>
-      {opponents.map(opp => (
-        <OpponentComponent opponent={opp} />
-      ))}
+      <div className={styles.opponentsWrap}>
+        {opponents.map(opp => (
+          <OpponentComponent opponent={opp} />
+        ))}
+      </div>
     </div>
   )
 }
