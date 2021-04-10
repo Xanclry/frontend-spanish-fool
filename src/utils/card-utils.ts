@@ -9,3 +9,8 @@ export const getRandomCard = () => {
   }
   return newCard
 }
+
+export const getCardId = (card: Card) => {
+  // return `${card.suit.name} ${card.rank.name}`
+  return JSON.stringify(card)
+}

@@ -5,6 +5,8 @@ import { ChestComponent } from '../../chest-component/chestComponent'
 import styles from './playerHand.module.scss'
 import { CardComponent } from '../../card-component/cardComponent'
 import { Ranks } from '../../../../../../model/card/ranks'
+import { Draggable, Droppable } from 'react-beautiful-dnd'
+import { getCardId } from '../../../../../../utils/card-utils'
 
 interface Props {
   cards: Card[]
@@ -25,7 +27,24 @@ export const PlayerHand = ({ cards, chestItems }: Props) => {
         <ChestComponent chestItems={chestItems} />
       </div>
       <div className={styles.cardsWrap}>
-        {sortedCards.length ? sortedCards.map(card => <CardComponent card={card} />) : null}
+        <Droppable droppableId="player-hand">
+          {provided => (
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              {sortedCards.length
+                ? sortedCards.map((card, index) => (
+                    <Draggable key={getCardId(card)} draggableId={getCardId(card)} index={index}>
+                      {provided => (
+                        <span {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                          <CardComponent key={getCardId(card)} card={card} />
+                        </span>
+                      )}
+                    </Draggable>
+                  ))
+                : null}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
       </div>
     </div>
   )

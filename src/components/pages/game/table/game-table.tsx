@@ -14,6 +14,7 @@ import { OpponentsGroup } from './opponent/opponentsGroup'
 import { PlayerHand } from './player/hand/playerHand'
 import styles from './game-table.module.scss'
 import { debugMode } from '../../../../config'
+import { DragDropContext } from 'react-beautiful-dnd'
 
 export const GameTable = () => {
   const playerHand = useSelector((state: RootState) => state.player.hand)
@@ -59,6 +60,14 @@ export const GameTable = () => {
     dispatch(discardPileActions.clearPile())
   }
 
+  const onDragEnd = (result: any) => {
+    // todo: implement
+    const droppedCard = JSON.parse(result.draggableId)
+    dispatch(cardStackActions.addCardsToStack([droppedCard]))
+    dispatch(playerDeckActions.removeCard(droppedCard))
+    console.log(result, ' ')
+  }
+
   return (
     <>
       {debugMode && (
@@ -77,13 +86,12 @@ export const GameTable = () => {
         </div>
       )}
 
-      <PlayerHand cards={playerHand} chestItems={playerChestItems} />
-
-      <OpponentsGroup opponents={opponents} />
-      <CardStackComponent cards={cardStack} />
-      <div>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <PlayerHand cards={playerHand} chestItems={playerChestItems} />
+        <OpponentsGroup opponents={opponents} />
+        <CardStackComponent cards={cardStack} />
         <DiscardPileComponent cardsAmount={discardPileCardsAmount} />
-      </div>
+      </DragDropContext>
     </>
   )
 }

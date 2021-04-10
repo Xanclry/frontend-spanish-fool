@@ -4,12 +4,13 @@ import { CardPictureProvider } from '../../../../../model/card/picture-provider/
 
 interface Props {
   card: Card | null | undefined
+  innerRef?: any
 }
 
-export const CardComponent = ({ card }: Props) => {
+export const CardComponent = ({ card, innerRef }: Props) => {
   return (
-    <>
+    <span ref={innerRef}>
       <CardPictureProvider card={card} />
-    </>
+    </span>
   )
 }

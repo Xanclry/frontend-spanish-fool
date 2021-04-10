@@ -23,6 +23,13 @@ export const playerDeckSlice = createSlice({
       state.hand = []
       state.chest = []
     },
+    removeCard: (state, action: PayloadAction<Card>) => {
+      const cardToRemove = action.payload
+      const index = state.hand.findIndex(
+        card => card.rank.name === cardToRemove.rank.name && card.suit.name === cardToRemove.suit.name
+      )
+      if (index !== -1) state.hand.splice(index, 1)
+    },
   },
 })
 
