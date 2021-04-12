@@ -2,9 +2,16 @@ $card-shift: 50;
 $card-rotation: 35;
 
 .mainWrap {
-  border: #c31313 1px solid;
+  border: #c31313 3px double;
   margin: 2px;
   padding: 10px;
+  width: 150px;
+  height: 150px;
+
+  .cardPile {
+    min-height: 100%;
+    border: #ff881a 5px solid;
+  }
 
   @for $i from 1 through 100 {
     .cardPile > *:nth-child(#{$i}) {
@@ -18,4 +25,6 @@ $card-rotation: 35;
   position: fixed;
   top: 40%;
   left: 50%;
+  transform: translateX(-50%);
+
 }

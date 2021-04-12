@@ -14,6 +14,7 @@ import { OpponentsGroup } from './opponent/opponentsGroup'
 import { PlayerHand } from './player/hand/playerHand'
 import styles from './game-table.module.scss'
 import { debugMode } from '../../../../config'
+import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 
 export const GameTable = () => {
   const playerHand = useSelector((state: RootState) => state.player.hand)
@@ -32,6 +33,10 @@ export const GameTable = () => {
 
   const addRandomChestItem = () => {
     const newChestPair: ChestPair = { topCard: getRandomCard(), bottomCard: null }
+    dispatch(playerDeckActions.addCardToChest(newChestPair))
+  }
+  const addRandomEmptyChestItem = () => {
+    const newChestPair: ChestPair = { topCard: null, bottomCard: getRandomCard() }
     dispatch(playerDeckActions.addCardToChest(newChestPair))
   }
 
@@ -59,12 +64,37 @@ export const GameTable = () => {
     dispatch(discardPileActions.clearPile())
   }
 
+  const onDragEnd = (result: DropResult) => {
+    // todo: implement
+    const droppedCard = JSON.parse(result.draggableId)
+    const { source, destination } = result
+
+    if (!destination) return
+    if (source.droppableId === destination.droppableId) return
+
+    dispatch(cardStackActions.addCardsToStack([droppedCard]))
+    if (result.source.droppableId === 'player-hand') {
+      dispatch(playerDeckActions.removeCard(droppedCard))
+      return
+    }
+    // bottom index = 1
+    // top index = 2
+    if (result.source.index === 2) {
+      dispatch(playerDeckActions.deleteTopCard(+result.source.droppableId))
+    } else {
+      dispatch(playerDeckActions.deleteChest(+result.source.droppableId))
+    }
+    console.log(result, ' ')
+  }
+
   return (
     <>
       {debugMode && (
         <div className={styles.debugPanel}>
           <button onClick={addRandomCardToHand}>Add random card</button>
           <button onClick={addRandomChestItem}>Add random chest item</button>
+          <br />
+          <button onClick={addRandomEmptyChestItem}>Add empty chest item</button>
           <button onClick={deleteAllCards}>Delete all cards</button>
           <br />
           <button onClick={addOpponent}>Add opponent</button>
@@ -77,13 +107,12 @@ export const GameTable = () => {
         </div>
       )}
 
-      <PlayerHand cards={playerHand} chestItems={playerChestItems} />
-
-      <OpponentsGroup opponents={opponents} />
-      <CardStackComponent cards={cardStack} />
-      <div>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <PlayerHand cards={playerHand} chestItems={playerChestItems} />
+        <OpponentsGroup opponents={opponents} />
+        <CardStackComponent cards={cardStack} />
         <DiscardPileComponent cardsAmount={discardPileCardsAmount} />
-      </div>
+      </DragDropContext>
     </>
   )
 }

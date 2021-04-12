@@ -9,8 +9,6 @@ export const MainMenu = () => {
   const { currentUser, logout } = useAuth()
   const history = useHistory()
 
-  console.log(currentUser)
-
   const handleLogout = async () => {
     setError('')
 

@@ -7,7 +7,10 @@ interface DiscardPileProps {
 }
 
 export const DiscardPileComponent = ({ cardsAmount }: DiscardPileProps) => {
-  const cards = Array(cardsAmount).fill(<CardComponent card={null} />)
+  const cards = Array(cardsAmount)
+    .fill({})
+    // eslint-disable-next-line id-length
+    .map((_, index) => <CardComponent key={index} card={null} />)
   return (
     <div className={styles.mainWrap}>
       <div className={styles.pile}>{cards}</div>

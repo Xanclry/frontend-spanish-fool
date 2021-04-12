@@ -1,6 +1,7 @@
 import { ChestPair } from '../../../../../model/chest/chest-pair'
 import styles from './chestComponent.module.scss'
 import { CardComponent } from '../card-component/cardComponent'
+import { v4 } from 'uuid'
 
 interface ChestComponentProps {
   chestItems: ChestPair[]
@@ -11,7 +12,7 @@ export const ChestComponent = ({ chestItems }: ChestComponentProps) => {
     <div className={styles.chestWrap}>
       {chestItems.length
         ? chestItems.map(item => (
-            <div className={styles.chestItemWrap}>
+            <div key={v4()} className={styles.chestItemWrap}>
               <span className={styles.topCard}>
                 <CardComponent card={item.topCard} />
               </span>
