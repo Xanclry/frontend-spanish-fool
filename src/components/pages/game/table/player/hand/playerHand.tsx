@@ -21,7 +21,6 @@ const cardCompareFunction = (a: Card, b: Card): number => {
 export const PlayerHand = ({ cards, chestItems }: Props) => {
   const sortedCards = [...cards]
   sortedCards.sort(cardCompareFunction)
-  console.log(cards.length)
   return (
     <div className={styles.mainWrap}>
       <div>
@@ -36,6 +35,7 @@ export const PlayerHand = ({ cards, chestItems }: Props) => {
                     <Draggable key={getCardId(card)} draggableId={getCardId(card)} index={index}>
                       {provided => (
                         <span
+                          className={styles.cardItem}
                           style={{ zIndex: 1000 }}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}

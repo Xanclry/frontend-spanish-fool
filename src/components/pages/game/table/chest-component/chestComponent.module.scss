@@ -1,11 +1,10 @@
 .chestWrap {
   padding: 10px 30%;
   margin: 2px;
-  width: max-content;
-
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   .chestItemWrap {
     position: relative;

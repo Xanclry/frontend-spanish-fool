@@ -4,6 +4,7 @@ import { CardComponent } from '../card-component/cardComponent'
 import { Draggable, DraggableProvided, Droppable } from 'react-beautiful-dnd'
 import { getCardId } from '../../../../../utils/card-utils'
 import React from 'react'
+import { v4 } from 'uuid'
 
 interface ChestComponentProps {
   chestItems: ChestPair[]
@@ -37,10 +38,15 @@ export const PlayerChestComponent = ({ chestItems }: ChestComponentProps) => {
     <div className={styles.chestWrap}>
       {chestItems.length
         ? chestItems.map((item, index) => (
-            <Droppable key={index} isDropDisabled={true} droppableId={index.toString(10)}>
+            <Droppable key={v4()} isDropDisabled={true} droppableId={index.toString(10)}>
               {provided => (
-                <div ref={provided.innerRef}>
-                  <div className={styles.chestItemWrap}>
+                <>
+                  <div
+                    className={styles.chestItemWrap}
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    style={{ maxWidth: '100px' }}
+                  >
                     {item.topCard && (
                       <Draggable draggableId={getCardId(item.topCard)} index={2}>
                         {provided => topCardComponent(item, provided)}
@@ -57,9 +63,9 @@ export const PlayerChestComponent = ({ chestItems }: ChestComponentProps) => {
                     ) : (
                       bottomCardComponent(item)
                     )}
-                    {provided.placeholder}
                   </div>
-                </div>
+                  {/*{provided.placeholder}*/}
+                </>
               )}
             </Droppable>
           ))

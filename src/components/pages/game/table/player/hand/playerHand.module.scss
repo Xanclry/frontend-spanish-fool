@@ -12,5 +12,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    .cardItem {
+      transition: all 0.2s ease-out;
+    }
+
+    .cardItem:hover {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
   }
 }
