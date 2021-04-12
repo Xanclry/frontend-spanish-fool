@@ -9,6 +9,7 @@ interface Props {
 
 export const CardComponent = ({ card, innerRef }: Props) => {
   return (
+    // <span style={{ zIndex: 10000 }} ref={innerRef}>
     <span ref={innerRef}>
       <CardPictureProvider card={card} />
     </span>

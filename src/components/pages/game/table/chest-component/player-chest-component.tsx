@@ -1,0 +1,69 @@
+import { ChestPair } from '../../../../../model/chest/chest-pair'
+import styles from './chestComponent.module.scss'
+import { CardComponent } from '../card-component/cardComponent'
+import { Draggable, DraggableProvided, Droppable } from 'react-beautiful-dnd'
+import { getCardId } from '../../../../../utils/card-utils'
+import React from 'react'
+
+interface ChestComponentProps {
+  chestItems: ChestPair[]
+}
+
+export const PlayerChestComponent = ({ chestItems }: ChestComponentProps) => {
+  const bottomCardComponent = (item: ChestPair, provided?: DraggableProvided) => {
+    return provided ? (
+      <span
+        ref={provided.innerRef}
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}
+        className={styles.bottomCard}
+      >
+        <CardComponent card={item?.bottomCard} />
+      </span>
+    ) : (
+      <span className={styles.bottomCard}>
+        <CardComponent card={item?.bottomCard} />
+      </span>
+    )
+  }
+
+  const topCardComponent = (item: ChestPair, provided: DraggableProvided) => (
+    <span {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} className={styles.topCard}>
+      <CardComponent card={item.topCard} />
+    </span>
+  )
+
+  return (
+    <div className={styles.chestWrap}>
+      {chestItems.length
+        ? chestItems.map((item, index) => (
+            <Droppable key={index} isDropDisabled={true} droppableId={index.toString(10)}>
+              {provided => (
+                <div ref={provided.innerRef}>
+                  <div className={styles.chestItemWrap}>
+                    {item.topCard && (
+                      <Draggable draggableId={getCardId(item.topCard)} index={2}>
+                        {provided => topCardComponent(item, provided)}
+                      </Draggable>
+                    )}
+                    {item.bottomCard ? (
+                      <Draggable
+                        isDragDisabled={item.topCard !== null}
+                        draggableId={getCardId(item.bottomCard)}
+                        index={1}
+                      >
+                        {provided => bottomCardComponent(item, provided)}
+                      </Draggable>
+                    ) : (
+                      bottomCardComponent(item)
+                    )}
+                    {provided.placeholder}
+                  </div>
+                </div>
+              )}
+            </Droppable>
+          ))
+        : null}
+    </div>
+  )
+}

@@ -19,6 +19,12 @@ export const playerDeckSlice = createSlice({
     addCardToChest: (state, action: PayloadAction<ChestPair>) => {
       state.chest.push(action.payload)
     },
+    deleteTopCard: (state, action: PayloadAction<number>) => {
+      state.chest[action.payload].topCard = null
+    },
+    deleteChest: (state, action: PayloadAction<number>) => {
+      state.chest.splice(action.payload, 1)
+    },
     removeAllCards: state => {
       state.hand = []
       state.chest = []

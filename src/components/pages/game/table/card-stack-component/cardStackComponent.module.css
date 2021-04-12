@@ -1,610 +1,616 @@
 .mainWrap {
-  border: #c31313 1px solid;
+  border: #c31313 3px double;
   margin: 2px;
   padding: 10px;
+  width: 150px;
+  height: 150px;
   position: fixed;
   top: 40%;
-  left: 50%;
+  left: 40%;
+}
+.mainWrap .cardPile {
+  min-height: 100%;
+  border: #ff881a 5px solid;
 }
 .mainWrap .cardPile > *:nth-child(1) {
   position: absolute;
-  left: 17px;
-  top: 15px;
-  transform: rotate(-6.5deg);
+  left: 20px;
+  top: -11px;
+  transform: rotate(-5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(2) {
   position: absolute;
-  left: 11px;
-  top: 9px;
-  transform: rotate(-10.5deg);
+  left: -15px;
+  top: -12px;
+  transform: rotate(-4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(3) {
   position: absolute;
-  left: -12px;
-  top: 10px;
-  transform: rotate(6.5deg);
+  left: -9px;
+  top: -8px;
+  transform: rotate(-14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(4) {
   position: absolute;
-  left: 18px;
-  top: -15px;
-  transform: rotate(4.5deg);
+  left: -14px;
+  top: -3px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(5) {
   position: absolute;
-  left: -13px;
-  top: 12px;
-  transform: rotate(4.5deg);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-1.5deg);
 }
 .mainWrap .cardPile > *:nth-child(6) {
   position: absolute;
-  left: 14px;
+  left: -13px;
   top: 25px;
-  transform: rotate(-9.5deg);
+  transform: rotate(-12.5deg);
 }
 .mainWrap .cardPile > *:nth-child(7) {
   position: absolute;
-  left: -15px;
-  top: -1px;
-  transform: rotate(-9.5deg);
+  left: 1px;
+  top: -5px;
+  transform: rotate(9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(8) {
   position: absolute;
-  left: -16px;
+  left: 22px;
   top: -14px;
-  transform: rotate(3.5deg);
+  transform: rotate(7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(9) {
   position: absolute;
-  left: -11px;
-  top: -16px;
-  transform: rotate(8.5deg);
+  left: 23px;
+  top: -14px;
+  transform: rotate(16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(10) {
   position: absolute;
-  left: 2px;
-  top: -8px;
-  transform: rotate(-7.5deg);
+  left: 20px;
+  top: -2px;
+  transform: rotate(16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(11) {
   position: absolute;
-  left: 22px;
-  top: 9px;
-  transform: rotate(-14.5deg);
+  left: -1px;
+  top: 13px;
+  transform: rotate(-16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(12) {
   position: absolute;
-  left: -2px;
-  top: -23px;
-  transform: rotate(14.5deg);
+  left: 13px;
+  top: 25px;
+  transform: rotate(6.5deg);
 }
 .mainWrap .cardPile > *:nth-child(13) {
   position: absolute;
-  left: -6px;
-  top: -21px;
-  transform: rotate(-8.5deg);
+  left: 16px;
+  top: -16px;
+  transform: rotate(-4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(14) {
   position: absolute;
-  left: 24px;
-  top: 15px;
-  transform: rotate(-10.5deg);
+  left: 5px;
+  top: -6px;
+  transform: rotate(-4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(15) {
   position: absolute;
-  left: 16px;
-  top: 7px;
-  transform: rotate(14.5deg);
+  left: -14px;
+  top: -5px;
+  transform: rotate(7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(16) {
   position: absolute;
-  left: -24px;
-  top: -18px;
-  transform: rotate(-9.5deg);
+  left: -22px;
+  top: -8px;
+  transform: rotate(7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(17) {
+  position: absolute;
+  left: 22px;
+  top: -12px;
+  transform: rotate(3.5deg);
+}
+.mainWrap .cardPile > *:nth-child(18) {
   position: absolute;
   left: 4px;
   top: 22px;
   transform: rotate(1.5deg);
 }
-.mainWrap .cardPile > *:nth-child(18) {
-  position: absolute;
-  left: -4px;
-  top: -4px;
-  transform: rotate(17.5deg);
-}
 .mainWrap .cardPile > *:nth-child(19) {
   position: absolute;
-  left: -4px;
-  top: 20px;
-  transform: rotate(-1.5deg);
+  left: 23px;
+  top: -23px;
+  transform: rotate(15.5deg);
 }
 .mainWrap .cardPile > *:nth-child(20) {
   position: absolute;
-  left: -23px;
-  top: 3px;
-  transform: rotate(4.5deg);
+  left: 5px;
+  top: 23px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(21) {
   position: absolute;
-  left: 20px;
-  top: -8px;
-  transform: rotate(-4.5deg);
+  left: 22px;
+  top: -20px;
+  transform: rotate(4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(22) {
   position: absolute;
-  left: -1px;
-  top: 13px;
-  transform: rotate(6.5deg);
+  left: 15px;
+  top: -23px;
+  transform: rotate(-12.5deg);
 }
 .mainWrap .cardPile > *:nth-child(23) {
   position: absolute;
-  left: 13px;
-  top: 10px;
-  transform: rotate(-5.5deg);
+  left: -2px;
+  top: 11px;
+  transform: rotate(12.5deg);
 }
 .mainWrap .cardPile > *:nth-child(24) {
   position: absolute;
-  left: -22px;
-  top: -17px;
-  transform: rotate(9.5deg);
+  left: -16px;
+  top: 25px;
+  transform: rotate(7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(25) {
   position: absolute;
   left: -2px;
-  top: 10px;
-  transform: rotate(3.5deg);
+  top: -23px;
+  transform: rotate(2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(26) {
   position: absolute;
-  left: 16px;
-  top: 0;
-  transform: rotate(-2.5deg);
+  left: -1px;
+  top: -24px;
+  transform: rotate(-6.5deg);
 }
 .mainWrap .cardPile > *:nth-child(27) {
   position: absolute;
-  left: -1px;
-  top: 9px;
-  transform: rotate(-12.5deg);
+  left: -23px;
+  top: 6px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(28) {
   position: absolute;
-  left: -13px;
-  top: -16px;
-  transform: rotate(16.5deg);
+  left: -14px;
+  top: 7px;
+  transform: rotate(14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(29) {
   position: absolute;
-  left: -3px;
-  top: -3px;
-  transform: rotate(-9.5deg);
+  left: 21px;
+  top: 3px;
+  transform: rotate(-14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(30) {
   position: absolute;
-  left: 19px;
-  top: 22px;
-  transform: rotate(-14.5deg);
+  left: 3px;
+  top: -20px;
+  transform: rotate(12.5deg);
 }
 .mainWrap .cardPile > *:nth-child(31) {
   position: absolute;
-  left: -15px;
-  top: 20px;
-  transform: rotate(2.5deg);
+  left: 8px;
+  top: 23px;
+  transform: rotate(15.5deg);
 }
 .mainWrap .cardPile > *:nth-child(32) {
   position: absolute;
-  left: 22px;
-  top: 20px;
-  transform: rotate(-1.5deg);
+  left: -8px;
+  top: 9px;
+  transform: rotate(14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(33) {
   position: absolute;
-  left: 1px;
-  top: -17px;
-  transform: rotate(13.5deg);
+  left: -17px;
+  top: 23px;
+  transform: rotate(10.5deg);
 }
 .mainWrap .cardPile > *:nth-child(34) {
   position: absolute;
-  left: -13px;
-  top: 5px;
-  transform: rotate(7.5deg);
+  left: -22px;
+  top: -8px;
+  transform: rotate(9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(35) {
   position: absolute;
-  left: -12px;
-  top: -6px;
-  transform: rotate(12.5deg);
+  left: 19px;
+  top: -1px;
+  transform: rotate(17.5deg);
 }
 .mainWrap .cardPile > *:nth-child(36) {
   position: absolute;
-  left: 17px;
-  top: -16px;
-  transform: rotate(-7.5deg);
+  left: 11px;
+  top: -18px;
+  transform: rotate(-11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(37) {
   position: absolute;
-  left: 15px;
-  top: 17px;
+  left: 25px;
+  top: -16px;
   transform: rotate(-5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(38) {
   position: absolute;
-  left: -8px;
-  top: -4px;
-  transform: rotate(-10.5deg);
+  left: -24px;
+  top: -8px;
+  transform: rotate(6.5deg);
 }
 .mainWrap .cardPile > *:nth-child(39) {
   position: absolute;
-  left: -4px;
-  top: -7px;
-  transform: rotate(-8.5deg);
+  left: -12px;
+  top: 17px;
+  transform: rotate(-9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(40) {
   position: absolute;
-  left: -7px;
-  top: -16px;
-  transform: rotate(5.5deg);
+  left: 25px;
+  top: 16px;
+  transform: rotate(0.5deg);
 }
 .mainWrap .cardPile > *:nth-child(41) {
   position: absolute;
-  left: 24px;
-  top: 24px;
-  transform: rotate(-15.5deg);
+  left: -4px;
+  top: -10px;
+  transform: rotate(16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(42) {
   position: absolute;
-  left: -5px;
-  top: -19px;
-  transform: rotate(14.5deg);
+  left: 0px;
+  top: -10px;
+  transform: rotate(3.5deg);
 }
 .mainWrap .cardPile > *:nth-child(43) {
   position: absolute;
-  left: 15px;
-  top: 20px;
-  transform: rotate(-14.5deg);
+  left: 1px;
+  top: -20px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(44) {
   position: absolute;
-  left: 8px;
-  top: -14px;
-  transform: rotate(-4.5deg);
+  left: -1px;
+  top: -15px;
+  transform: rotate(8.5deg);
 }
 .mainWrap .cardPile > *:nth-child(45) {
   position: absolute;
-  left: 16px;
-  top: -4px;
-  transform: rotate(-0.5deg);
+  left: -12px;
+  top: -3px;
+  transform: rotate(0.5deg);
 }
 .mainWrap .cardPile > *:nth-child(46) {
   position: absolute;
-  left: -18px;
-  top: 12px;
-  transform: rotate(-15.5deg);
+  left: 17px;
+  top: -3px;
+  transform: rotate(11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(47) {
   position: absolute;
-  left: 19px;
-  top: -14px;
-  transform: rotate(-13.5deg);
+  left: 13px;
+  top: -13px;
+  transform: rotate(-5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(48) {
   position: absolute;
-  left: 25px;
-  top: 12px;
-  transform: rotate(16.5deg);
+  left: -24px;
+  top: 10px;
+  transform: rotate(3.5deg);
 }
 .mainWrap .cardPile > *:nth-child(49) {
   position: absolute;
-  left: 21px;
-  top: 16px;
-  transform: rotate(8.5deg);
+  left: 10px;
+  top: -6px;
+  transform: rotate(3.5deg);
 }
 .mainWrap .cardPile > *:nth-child(50) {
   position: absolute;
-  left: 2px;
-  top: 19px;
-  transform: rotate(-5.5deg);
+  left: -24px;
+  top: 13px;
+  transform: rotate(-10.5deg);
 }
 .mainWrap .cardPile > *:nth-child(51) {
   position: absolute;
-  left: -15px;
-  top: 5px;
-  transform: rotate(-0.5deg);
+  left: -9px;
+  top: 9px;
+  transform: rotate(3.5deg);
 }
 .mainWrap .cardPile > *:nth-child(52) {
   position: absolute;
-  left: -21px;
-  top: 9px;
-  transform: rotate(1.5deg);
+  left: -13px;
+  top: -6px;
+  transform: rotate(8.5deg);
 }
 .mainWrap .cardPile > *:nth-child(53) {
   position: absolute;
-  left: -5px;
-  top: 19px;
-  transform: rotate(0.5deg);
+  left: -17px;
+  top: -1px;
+  transform: rotate(5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(54) {
   position: absolute;
-  left: -21px;
-  top: 25px;
-  transform: rotate(-3.5deg);
+  left: -24px;
+  top: -12px;
+  transform: rotate(6.5deg);
 }
 .mainWrap .cardPile > *:nth-child(55) {
   position: absolute;
-  left: -8px;
-  top: 12px;
-  transform: rotate(0.5deg);
+  left: 14px;
+  top: 20px;
+  transform: rotate(3.5deg);
 }
 .mainWrap .cardPile > *:nth-child(56) {
   position: absolute;
-  left: 12px;
-  top: -17px;
-  transform: rotate(-10.5deg);
+  left: 16px;
+  top: 1px;
+  transform: rotate(-9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(57) {
   position: absolute;
-  left: 20px;
-  top: 16px;
-  transform: rotate(6.5deg);
+  left: -22px;
+  top: -3px;
+  transform: rotate(-16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(58) {
   position: absolute;
-  left: 12px;
-  top: -24px;
-  transform: rotate(3.5deg);
+  left: 10px;
+  top: 15px;
+  transform: rotate(-6.5deg);
 }
 .mainWrap .cardPile > *:nth-child(59) {
   position: absolute;
-  left: 11px;
-  top: -6px;
+  left: 8px;
+  top: 22px;
   transform: rotate(4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(60) {
   position: absolute;
-  left: 22px;
-  top: 12px;
-  transform: rotate(1.5deg);
+  left: -8px;
+  top: -6px;
+  transform: rotate(-1.5deg);
 }
 .mainWrap .cardPile > *:nth-child(61) {
   position: absolute;
-  left: -20px;
-  top: -9px;
-  transform: rotate(16.5deg);
+  left: -19px;
+  top: 11px;
+  transform: rotate(14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(62) {
   position: absolute;
-  left: 0;
-  top: -15px;
-  transform: rotate(6.5deg);
+  left: -9px;
+  top: 13px;
+  transform: rotate(-5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(63) {
   position: absolute;
   left: -2px;
-  top: -5px;
-  transform: rotate(-6.5deg);
+  top: -9px;
+  transform: rotate(-11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(64) {
   position: absolute;
-  left: 2px;
-  top: -21px;
-  transform: rotate(-1.5deg);
+  left: -14px;
+  top: 11px;
+  transform: rotate(-10.5deg);
 }
 .mainWrap .cardPile > *:nth-child(65) {
   position: absolute;
-  left: 12px;
-  top: 21px;
-  transform: rotate(1.5deg);
+  left: 3px;
+  top: 0px;
+  transform: rotate(-9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(66) {
   position: absolute;
-  left: -14px;
-  top: 4px;
-  transform: rotate(17.5deg);
+  left: 5px;
+  top: -8px;
+  transform: rotate(16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(67) {
   position: absolute;
-  left: 3px;
-  top: 5px;
-  transform: rotate(-0.5deg);
+  left: 25px;
+  top: 0px;
+  transform: rotate(0.5deg);
 }
 .mainWrap .cardPile > *:nth-child(68) {
   position: absolute;
-  left: -17px;
-  top: -24px;
-  transform: rotate(0.5deg);
+  left: -10px;
+  top: 6px;
+  transform: rotate(15.5deg);
 }
 .mainWrap .cardPile > *:nth-child(69) {
   position: absolute;
-  left: -4px;
-  top: 23px;
-  transform: rotate(10.5deg);
+  left: -21px;
+  top: -12px;
+  transform: rotate(16.5deg);
 }
 .mainWrap .cardPile > *:nth-child(70) {
   position: absolute;
-  left: -19px;
-  top: 3px;
+  left: 0px;
+  top: -15px;
   transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(71) {
   position: absolute;
-  left: -10px;
-  top: -7px;
-  transform: rotate(6.5deg);
+  left: -11px;
+  top: 24px;
+  transform: rotate(-11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(72) {
   position: absolute;
-  left: -9px;
-  top: -22px;
-  transform: rotate(-1.5deg);
+  left: 10px;
+  top: -21px;
+  transform: rotate(-7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(73) {
   position: absolute;
-  left: 12px;
-  top: -1px;
-  transform: rotate(3.5deg);
+  left: 23px;
+  top: 24px;
+  transform: rotate(11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(74) {
   position: absolute;
-  left: 0;
-  top: 10px;
-  transform: rotate(-4.5deg);
+  left: 4px;
+  top: -24px;
+  transform: rotate(-13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(75) {
   position: absolute;
-  left: -20px;
-  top: -20px;
-  transform: rotate(-0.5deg);
+  left: -5px;
+  top: 13px;
+  transform: rotate(17.5deg);
 }
 .mainWrap .cardPile > *:nth-child(76) {
   position: absolute;
-  left: 22px;
-  top: -2px;
-  transform: rotate(2.5deg);
+  left: 16px;
+  top: -1px;
+  transform: rotate(4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(77) {
   position: absolute;
-  left: 2px;
-  top: 2px;
-  transform: rotate(6.5deg);
+  left: -7px;
+  top: -5px;
+  transform: rotate(-14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(78) {
   position: absolute;
-  left: 1px;
-  top: 25px;
-  transform: rotate(-0.5deg);
+  left: -15px;
+  top: -5px;
+  transform: rotate(9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(79) {
   position: absolute;
-  left: -2px;
-  top: -6px;
-  transform: rotate(5.5deg);
+  left: 13px;
+  top: 3px;
+  transform: rotate(8.5deg);
 }
 .mainWrap .cardPile > *:nth-child(80) {
   position: absolute;
-  left: -16px;
-  top: -18px;
-  transform: rotate(5.5deg);
+  left: -24px;
+  top: -17px;
+  transform: rotate(-7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(81) {
   position: absolute;
-  left: -12px;
-  top: -18px;
-  transform: rotate(-10.5deg);
+  left: -15px;
+  top: -11px;
+  transform: rotate(2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(82) {
   position: absolute;
-  left: 19px;
-  top: 1px;
-  transform: rotate(-16.5deg);
+  left: 17px;
+  top: 13px;
+  transform: rotate(2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(83) {
   position: absolute;
-  left: 12px;
-  top: 1px;
-  transform: rotate(17.5deg);
+  left: 7px;
+  top: 13px;
+  transform: rotate(9.5deg);
 }
 .mainWrap .cardPile > *:nth-child(84) {
   position: absolute;
-  left: 18px;
-  top: 24px;
-  transform: rotate(-7.5deg);
+  left: -14px;
+  top: -18px;
+  transform: rotate(14.5deg);
 }
 .mainWrap .cardPile > *:nth-child(85) {
   position: absolute;
-  left: -10px;
-  top: 25px;
-  transform: rotate(-1.5deg);
+  left: -9px;
+  top: -1px;
+  transform: rotate(2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(86) {
   position: absolute;
-  left: 20px;
-  top: -19px;
-  transform: rotate(3.5deg);
+  left: -16px;
+  top: 16px;
+  transform: rotate(8.5deg);
 }
 .mainWrap .cardPile > *:nth-child(87) {
   position: absolute;
-  left: 21px;
-  top: 0;
-  transform: rotate(13.5deg);
+  left: 7px;
+  top: -1px;
+  transform: rotate(8.5deg);
 }
 .mainWrap .cardPile > *:nth-child(88) {
   position: absolute;
-  left: 15px;
-  top: -15px;
-  transform: rotate(-11.5deg);
+  left: 7px;
+  top: -19px;
+  transform: rotate(11.5deg);
 }
 .mainWrap .cardPile > *:nth-child(89) {
   position: absolute;
-  left: -2px;
-  top: 11px;
-  transform: rotate(4.5deg);
+  left: -3px;
+  top: 6px;
+  transform: rotate(5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(90) {
   position: absolute;
-  left: -11px;
-  top: -22px;
-  transform: rotate(-3.5deg);
+  left: 22px;
+  top: -18px;
+  transform: rotate(-5.5deg);
 }
 .mainWrap .cardPile > *:nth-child(91) {
   position: absolute;
-  left: 9px;
-  top: 2px;
-  transform: rotate(-15.5deg);
+  left: 22px;
+  top: -17px;
+  transform: rotate(17.5deg);
 }
 .mainWrap .cardPile > *:nth-child(92) {
   position: absolute;
-  left: 25px;
-  top: -23px;
-  transform: rotate(-6.5deg);
+  left: -18px;
+  top: 5px;
+  transform: rotate(-4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(93) {
   position: absolute;
-  left: 12px;
-  top: 16px;
-  transform: rotate(15.5deg);
+  left: -11px;
+  top: -9px;
+  transform: rotate(2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(94) {
   position: absolute;
-  left: 20px;
-  top: -19px;
-  transform: rotate(-8.5deg);
+  left: -10px;
+  top: -17px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(95) {
   position: absolute;
-  left: 10px;
-  top: -13px;
-  transform: rotate(7.5deg);
+  left: -10px;
+  top: 2px;
+  transform: rotate(-7.5deg);
 }
 .mainWrap .cardPile > *:nth-child(96) {
   position: absolute;
-  left: 14px;
-  top: -3px;
-  transform: rotate(14.5deg);
+  left: 24px;
+  top: -19px;
+  transform: rotate(-2.5deg);
 }
 .mainWrap .cardPile > *:nth-child(97) {
   position: absolute;
-  left: 9px;
-  top: 22px;
-  transform: rotate(-4.5deg);
+  left: 20px;
+  top: -16px;
+  transform: rotate(-15.5deg);
 }
 .mainWrap .cardPile > *:nth-child(98) {
   position: absolute;
-  left: 23px;
-  top: 1px;
-  transform: rotate(-1.5deg);
+  left: -4px;
+  top: 22px;
+  transform: rotate(13.5deg);
 }
 .mainWrap .cardPile > *:nth-child(99) {
   position: absolute;
-  left: -16px;
-  top: 2px;
-  transform: rotate(-16.5deg);
+  left: 20px;
+  top: -8px;
+  transform: rotate(4.5deg);
 }
 .mainWrap .cardPile > *:nth-child(100) {
   position: absolute;
-  left: 2px;
-  top: 18px;
-  transform: rotate(2.5deg);
+  left: 3px;
+  top: -14px;
+  transform: rotate(11.5deg);
 }
 
 /*# sourceMappingURL=cardStackComponent.module.css.map */

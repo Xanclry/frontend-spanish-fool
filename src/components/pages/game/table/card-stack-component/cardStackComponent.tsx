@@ -11,7 +11,7 @@ interface CardStackProps {
 
 export const CardStackComponent = ({ cards }: CardStackProps) => {
   const cardComponents = cards.map((card, index) => (
-    <Draggable key={getCardId(card)} draggableId={getCardId(card)} index={index}>
+    <Draggable key={getCardId(card)} isDragDisabled={true} draggableId={getCardId(card)} index={index}>
       {provided => (
         <CardComponent
           {...provided.draggableProps}

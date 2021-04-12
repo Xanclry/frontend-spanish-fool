@@ -1,5 +1,4 @@
 .chestWrap {
-  //border: green 1px solid;
   padding: 10px 30%;
   margin: 2px;
   width: max-content;
@@ -12,19 +11,17 @@
     position: relative;
     width: 90px;
     .topCard {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      left: -20px;
+      bottom: 15px;
+      z-index: 10;
     }
 
     .bottomCard {
-      position: absolute;
-      left: 20px;
-      bottom: -15px;
-      z-index: -1;
+      position: relative;
+      z-index: 9;
     }
 
-
-    //border: gray 1px solid;
     margin: 2px;
     padding: 2px;
   }

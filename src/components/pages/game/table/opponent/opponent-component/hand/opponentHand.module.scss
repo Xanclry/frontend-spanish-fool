@@ -3,10 +3,7 @@ $rotation-modifier: 5;
 
 .mainWrap {
   position: absolute;
-
-  .handWrap {
-    padding-left: -80px;
-  }
+  margin-left: -40px;
   @for $i from 1 through 100 {
     .handWrap > *:nth-child(#{$i}) {
       position: absolute;
