@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/frontend-spanish-fool/static/css/main.2d9e5be3.chunk.css",
+    "main.js": "/frontend-spanish-fool/static/js/main.1e8b7fa3.chunk.js",
+    "main.js.map": "/frontend-spanish-fool/static/js/main.1e8b7fa3.chunk.js.map",
+    "runtime-main.js": "/frontend-spanish-fool/static/js/runtime-main.dea06f1a.js",
+    "runtime-main.js.map": "/frontend-spanish-fool/static/js/runtime-main.dea06f1a.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/frontend-spanish-fool/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.abf12d08.chunk.js": "/frontend-spanish-fool/static/js/2.abf12d08.chunk.js",
+    "static/js/2.abf12d08.chunk.js.map": "/frontend-spanish-fool/static/js/2.abf12d08.chunk.js.map",
+    "index.html": "/frontend-spanish-fool/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/frontend-spanish-fool/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.2d9e5be3.chunk.css.map": "/frontend-spanish-fool/static/css/main.2d9e5be3.chunk.css.map",
+    "static/js/2.abf12d08.chunk.js.LICENSE.txt": "/frontend-spanish-fool/static/js/2.abf12d08.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dea06f1a.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.abf12d08.chunk.js",
+    "static/css/main.2d9e5be3.chunk.css",
+    "static/js/main.1e8b7fa3.chunk.js"
+  ]
+}
