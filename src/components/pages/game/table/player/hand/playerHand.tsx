@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card } from '../../../../../../model/card/card'
-import { ChestPair } from '../../../../../../model/chest/chest-pair'
 import styles from './playerHand.module.scss'
 import { CardComponent } from '../../card-component/cardComponent'
 import { Ranks } from '../../../../../../model/card/ranks'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { getCardId } from '../../../../../../utils/card-utils'
 import { PlayerChestComponent } from '../../chest-component/player-chest-component'
+import { ChestPair } from '../../../../../../model/game/chest/chest-pair'
 
 interface Props {
   cards: Card[]

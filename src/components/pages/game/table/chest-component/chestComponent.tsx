@@ -1,7 +1,7 @@
-import { ChestPair } from '../../../../../model/chest/chest-pair'
 import styles from './chestComponent.module.scss'
 import { CardComponent } from '../card-component/cardComponent'
 import { v4 } from 'uuid'
+import { ChestPair } from '../../../../../model/game/chest/chest-pair'
 
 interface ChestComponentProps {
   chestItems: ChestPair[]

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Opponent } from '../../../../../../model/opponent/opponent'
 import { ChestComponent } from '../../chest-component/chestComponent'
 import styles from './opponentComponent.module.scss'
 import { useDispatch } from 'react-redux'
@@ -8,6 +7,7 @@ import { opponentsDecksActions } from '../../../../../../state/table/opponents-d
 import { getRandomCard } from '../../../../../../utils/card-utils'
 import { OpponentHand } from './hand/opponentHand'
 import { debugMode } from '../../../../../../config'
+import { Opponent } from '../../../../../../model/game/opponent/opponent'
 
 interface OpponentProps {
   opponent: Opponent

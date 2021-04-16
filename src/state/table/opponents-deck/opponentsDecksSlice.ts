@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Opponent } from '../../../model/opponent/opponent'
 import { Card } from '../../../model/card/card'
-import { ChestPair } from '../../../model/chest/chest-pair'
+import { Opponent } from '../../../model/game/opponent/opponent'
+import { ChestPair } from '../../../model/game/chest/chest-pair'
 
 interface OpponentsDecksState {
   opponentsCount: number

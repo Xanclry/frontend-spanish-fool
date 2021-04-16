@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Card } from '../../../model/card/card'
-import { ChestPair } from '../../../model/chest/chest-pair'
+import { ChestPair } from '../../../model/game/chest/chest-pair'
 
 interface PlayerDeckState {
   hand: Card[]

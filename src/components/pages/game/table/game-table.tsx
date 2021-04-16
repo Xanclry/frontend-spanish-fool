@@ -4,7 +4,6 @@ import { AppDispatch } from '../../../../state'
 import { playerDeckActions } from '../../../../state/table/player-deck/playerDeckSlice'
 import { Card } from '../../../../model/card/card'
 import { getRandomCard } from '../../../../utils/card-utils'
-import { ChestPair } from '../../../../model/chest/chest-pair'
 import { opponentsDecksActions } from '../../../../state/table/opponents-deck/opponentsDecksSlice'
 import { CardStackComponent } from './card-stack-component/cardStackComponent'
 import { cardStackActions } from '../../../../state/table/card-stack/cardStackSlice'
@@ -15,16 +14,44 @@ import { PlayerHand } from './player/hand/playerHand'
 import styles from './game-table.module.scss'
 import { debugMode } from '../../../../config'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
+import { ChestPair } from '../../../../model/game/chest/chest-pair'
+import { GameSession } from '../../../../model/session/game-session'
+import { useEffect } from 'react'
+import { SessionApi } from '../../../../api/session-api'
+import { useAuth } from '../../../../context/auth-context'
+import { Player } from '../../../../model/player/player'
+import { useHistory } from 'react-router-dom'
 
-export const GameTable = () => {
+const sessionApi = new SessionApi()
+
+export const GameTable = (props: any) => {
+  const currentGameSession: GameSession = props.location.state
   const playerHand = useSelector((state: RootState) => state.player.hand)
   const playerChestItems = useSelector((state: RootState) => state.player.chest)
   const cardStack = useSelector((state: RootState) => state.stack.cards)
   const discardPileCardsAmount = useSelector((state: RootState) => state.discardPile.cardAmount)
+  const { currentUser } = useAuth()
+  const history = useHistory()
 
   const opponents = useSelector((state: RootState) => state.opponents.opponents)
 
   const dispatch = useDispatch<AppDispatch>()
+
+  useEffect(() => {
+    console.log('use effect')
+    if (!currentUser || !currentUser?.uid || !currentUser.email) {
+      history.push('/')
+    }
+    const player: Player = {
+      // @ts-ignore
+      uid: currentUser.uid,
+      // @ts-ignore
+      email: currentUser.email,
+    }
+    sessionApi.joinGameSession(player, currentGameSession.id).then(result => {
+      console.log('gameSession', result)
+    })
+  }, [])
 
   const addRandomCardToHand = () => {
     const newCard: Card = getRandomCard()

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Opponent } from '../../../../../model/opponent/opponent'
 import { OpponentComponent } from './opponent-component/opponentComponent'
 import styles from './opponentsGroup.module.scss'
 import { v4 } from 'uuid'
+import { Opponent } from '../../../../../model/game/opponent/opponent'
 
 interface Props {
   opponents: Opponent[]
