@@ -9,6 +9,10 @@ interface PlayerDeckState {
 
 const initialState = { hand: [], chest: [] } as PlayerDeckState
 
+// const takeCardFromDeck = createAsyncThunk('playerDeck/takeCardFromDeck', async (playerUid: string, thunkAPI) => {
+//   const dispatch = useDispatch<AppDispatch>()
+// })
+
 export const playerDeckSlice = createSlice({
   name: 'playerDeck',
   initialState,

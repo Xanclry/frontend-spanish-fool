@@ -16,7 +16,7 @@ export const App = () => {
       <AuthProvider>
         <Switch>
           <Route path={'/'} exact component={MainMenu} />
-          <Route path={'/game/table'} exact component={GameTable} />
+          <PrivateRoute path={'/game/table'} exact component={GameTable} />
           <PrivateRoute path={'/settings'} exact component={SettingsPage} />
           <PrivateRoute path={'/profile'} exact component={Profile} />
           <Route path={'/game/lobby-select'} exact component={LobbySelectPage} />

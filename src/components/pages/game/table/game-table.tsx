@@ -20,9 +20,10 @@ import { useEffect } from 'react'
 import { SessionApi } from '../../../../api/session-api'
 import { useAuth } from '../../../../context/auth-context'
 import { Player } from '../../../../model/player/player'
-import { useHistory } from 'react-router-dom'
+import { GameApi } from '../../../../api/game-api'
 
 const sessionApi = new SessionApi()
+const gameApi = new GameApi()
 
 export const GameTable = (props: any) => {
   const currentGameSession: GameSession = props.location.state
@@ -31,26 +32,35 @@ export const GameTable = (props: any) => {
   const cardStack = useSelector((state: RootState) => state.stack.cards)
   const discardPileCardsAmount = useSelector((state: RootState) => state.discardPile.cardAmount)
   const { currentUser } = useAuth()
-  const history = useHistory()
 
   const opponents = useSelector((state: RootState) => state.opponents.opponents)
-
   const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
-    console.log('use effect')
-    if (!currentUser || !currentUser?.uid || !currentUser.email) {
-      history.push('/')
-    }
     const player: Player = {
       // @ts-ignore
       uid: currentUser.uid,
       // @ts-ignore
       email: currentUser.email,
     }
-    sessionApi.joinGameSession(player, currentGameSession.id).then(result => {
-      console.log('gameSession', result)
-    })
+    if (gameApi.isConnected()) {
+      sessionApi
+        .joinGameSession(player, currentGameSession.id)
+        .then(result => {
+          console.log('gameSession', result)
+        })
+        .then(() => {
+          console.log('subscribing...')
+          gameApi.subscribeOnSession(currentGameSession.id, message => {
+            console.log('FROM WEBSOCKET ', message)
+          })
+        })
+    }
+
+    return () => {
+      console.log('use effect return function')
+      gameApi.unsubscribeFromSession().then(gameApi.disconnect)
+    }
   }, [])
 
   const addRandomCardToHand = () => {
@@ -131,6 +141,10 @@ export const GameTable = (props: any) => {
           <br />
           <button onClick={() => addCardsToDiscardPile(1)}>Add one card to discard pile</button>
           <button onClick={clearDiscardPile}>Clear discard pile</button>
+
+          <br />
+          <button onClick={gameApi.unsubscribeFromSession}>Leave</button>
+          <button onClick={() => gameApi.sendData(currentGameSession.id, currentUser?.email)}>Send email</button>
         </div>
       )}
 

@@ -56,11 +56,13 @@ export const LobbySelectPage = () => {
       </Link>
       <br />
       {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
-      <div>
-        <p>Create new session</p>
-        <input value={newSessionName} onChange={event => setNewSessionName(event.target.value)} />
-        <button onClick={createNewGameSession}>Create</button>
-      </div>
+      {currentUser && (
+        <div>
+          <p>Create new session</p>
+          <input value={newSessionName} onChange={event => setNewSessionName(event.target.value)} />
+          <button onClick={createNewGameSession}>Create</button>
+        </div>
+      )}
       <li>
         {openSessions.map(session => (
           <ul key={uuid()}>
