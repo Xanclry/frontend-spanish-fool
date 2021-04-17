@@ -9,7 +9,7 @@ interface OpponentsDecksState {
 }
 
 export interface AddChestPayload {
-  playerId: number
+  playerUid: string
   topCard: Card
 }
 
@@ -19,11 +19,12 @@ export const opponentsDecksSlice = createSlice({
   name: 'opponentsDecks',
   initialState,
   reducers: {
-    addOpponent: state => {
+    addOpponent: (state, action: PayloadAction<string>) => {
       state.opponentsCount += 1
+      const index = state.opponents.findIndex(opponent => opponent.playerUid === action.payload)
+      if (index !== -1) return
       const opponentHand: Opponent = {
-        // todo get player id
-        playerId: Date.now(),
+        playerUid: action.payload,
         hand: {
           handCardCount: 0,
           chest: [],
@@ -31,26 +32,26 @@ export const opponentsDecksSlice = createSlice({
       }
       state.opponents.push(opponentHand)
     },
-    deleteOpponent: (state, action: PayloadAction<number>) => {
-      if (state.opponents.find(opp => opp.playerId === action.payload)) {
+    deleteOpponent: (state, action: PayloadAction<string>) => {
+      if (state.opponents.find(opp => opp.playerUid === action.payload)) {
         state.opponentsCount -= 1
-        state.opponents = state.opponents.filter(opp => opp.playerId !== action.payload)
+        state.opponents = state.opponents.filter(opp => opp.playerUid !== action.payload)
       }
     },
     deleteAllOpponents: state => {
       state.opponentsCount = 0
       state.opponents = []
     },
-    addCard: (state, action: PayloadAction<number>) => {
+    addCard: (state, action: PayloadAction<string>) => {
       const playerId = action.payload
-      const oldOpponentStateIndex = state.opponents.findIndex(opp => opp.playerId === playerId)
+      const oldOpponentStateIndex = state.opponents.findIndex(opp => opp.playerUid === playerId)
       if (oldOpponentStateIndex !== -1) {
         state.opponents[oldOpponentStateIndex].hand.handCardCount += 1
       }
     },
     addChestItem: (state, action: PayloadAction<AddChestPayload>) => {
-      const { playerId, topCard } = action.payload
-      const oldOpponentStateIndex = state.opponents.findIndex(opp => opp.playerId === playerId)
+      const { playerUid, topCard } = action.payload
+      const oldOpponentStateIndex = state.opponents.findIndex(opp => opp.playerUid === playerUid)
       if (oldOpponentStateIndex !== -1) {
         const newChestItem: ChestPair = {
           topCard,

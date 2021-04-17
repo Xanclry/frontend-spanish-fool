@@ -13,7 +13,11 @@ const suitNameAdapter = (suit: Suit) => {
 }
 
 const rankNameAdapter = (rank: Rank) => {
-  if (rank.name === '10') return rank.name
+  const digits = ['', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN']
+  const index = digits.findIndex(value => value === rank.name)
+  if (index !== -1) {
+    return index
+  }
   return rank.name.charAt(0)
 }
 

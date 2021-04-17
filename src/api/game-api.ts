@@ -1,6 +1,8 @@
 import SockJS from 'sockjs-client'
 import { debugMode, serverHost } from '../config'
 import StompJs, { Subscription } from 'stompjs'
+import { Move } from '../dto/messaging/move/move'
+import { Player } from '../model/player/player'
 
 export class GameApi {
   socket = new SockJS(`${serverHost}/in`)
@@ -32,16 +34,21 @@ export class GameApi {
     })
   }
 
-  subscribeOnSession = (sessionId: number, callback: (param: any) => any) => {
-    this.subscription = this.client.subscribe(`/out/${sessionId}`, callback)
+  subscribeOnSession = (
+    sessionId: number,
+    moveCallback: (moveResponse: any) => void,
+    metaCallback: (metaMessage: any) => void
+  ) => {
+    this.subscription = this.client.subscribe(`/out/move/${sessionId}`, moveCallback)
+    this.subscription = this.client.subscribe(`/out/meta/${sessionId}`, metaCallback)
   }
 
-  unsubscribeFromSession = async () => {
+  unsubscribeFromSession = async (sessionId: number, player: Player) => {
+    this.client.send(`/ws/in/meta/${sessionId}`, {}, JSON.stringify(player))
     this.subscription?.unsubscribe()
   }
 
-  sendData = (sessionId: number, body: any) => {
-    console.log()
-    this.client.send(`/ws/in/${sessionId}`, {}, body)
+  sendMove = (sessionId: number, body: Move) => {
+    this.client.send(`/ws/in/move/${sessionId}`, {}, JSON.stringify(body))
   }
 }

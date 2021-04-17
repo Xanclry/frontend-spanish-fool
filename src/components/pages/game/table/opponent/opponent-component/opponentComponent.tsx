@@ -15,19 +15,19 @@ interface OpponentProps {
 
 export const OpponentComponent = ({ opponent }: OpponentProps) => {
   const dispatch = useDispatch<AppDispatch>()
-  const { playerId } = opponent
+  const { playerUid } = opponent
 
   const deleteOpponent = () => {
-    dispatch(opponentsDecksActions.deleteOpponent(playerId))
+    dispatch(opponentsDecksActions.deleteOpponent(playerUid))
   }
 
   const addCard = () => {
-    dispatch(opponentsDecksActions.addCard(playerId))
+    dispatch(opponentsDecksActions.addCard(playerUid))
   }
 
   const addChestItem = () => {
     const payload = {
-      playerId,
+      playerUid,
       topCard: getRandomCard(),
     }
     dispatch(opponentsDecksActions.addChestItem(payload))
@@ -40,9 +40,9 @@ export const OpponentComponent = ({ opponent }: OpponentProps) => {
           <button onClick={deleteOpponent}>Delete the opponent</button>
           <button onClick={addCard}>Add a card</button>
           <button onClick={addChestItem}>Add a random chest item</button>
+          <p>Uid: {opponent.playerUid}</p>
         </div>
       )}
-
       <div>
         <OpponentHand cardAmount={opponent.hand.handCardCount} />
       </div>

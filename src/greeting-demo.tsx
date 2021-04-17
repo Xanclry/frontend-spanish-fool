@@ -8,6 +8,8 @@ let client = StompJs.over(socket)
 // let client = StompJs.client('ws://localhost:8080/websocket')
 //
 
+// todo delete
+
 interface Greeting {
   message: string
 }

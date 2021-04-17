@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import SockJS from 'sockjs-client'
 
+// todo delete
+
 interface WebsocketState {
   value: WebSocket
 }

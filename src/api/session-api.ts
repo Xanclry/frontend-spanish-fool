@@ -24,7 +24,7 @@ export class SessionApi {
     })
   }
 
-  joinGameSession = (player: Player, sessionId: number) => {
+  joinGameSession = (player: Player, sessionId: number): Promise<PrivateGameSession> => {
     return axios.post(`${this.sourceURL}/${sessionId}`, player).then(result => {
       return result.data
     })

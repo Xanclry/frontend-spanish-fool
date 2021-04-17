@@ -1,0 +1,7 @@
+export enum MoveType {
+  HAND_CHEST_SWAP,
+  HAND_TO_STACK,
+  CHEST_TO_STACK,
+  TAKE_STACK,
+  DISCARD_STACK,
+}

@@ -4,8 +4,8 @@ export interface Suit {
 }
 
 export const Suits: Suit[] = [
-  { name: 'Hearts', logo: '♥' },
-  { name: 'Diamonds', logo: '♦' },
-  { name: 'Clubs', logo: '♣' },
-  { name: 'Spades', logo: '♠' },
+  { name: 'HEARTS', logo: '♥' },
+  { name: 'DIAMONDS', logo: '♦' },
+  { name: 'CLUBS', logo: '♣' },
+  { name: 'SPADES', logo: '♠' },
 ]

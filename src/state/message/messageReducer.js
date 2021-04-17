@@ -1,5 +1,7 @@
 import { CREATE_ROOM_SUCCESS, JOIN_ROOM_SUCCESS, SET_USERNAME } from './messageActions'
 
+// todo delete
+
 const initialState = {
   room: null,
   chatLog: [],

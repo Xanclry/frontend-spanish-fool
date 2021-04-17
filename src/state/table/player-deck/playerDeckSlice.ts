@@ -1,11 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Card } from '../../../model/card/card'
 import { ChestPair } from '../../../model/game/chest/chest-pair'
+import { Player } from '../../../model/player/player'
 
 interface PlayerDeckState {
   hand: Card[]
   chest: ChestPair[]
 }
+
+interface RequestBottomCardDto {
+  chestIndex: number
+  sessionId: number
+  player: Player
+}
+
+// const requestBottomCard = createAsyncThunk(
+//   'playerDeck/requestBottomCard',
+//   async (data: RequestBottomCardDto, thunkAPI) => {}
+// )
 
 const initialState = { hand: [], chest: [] } as PlayerDeckState
 
@@ -29,6 +41,9 @@ export const playerDeckSlice = createSlice({
     deleteChest: (state, action: PayloadAction<number>) => {
       state.chest.splice(action.payload, 1)
     },
+    // setChestBottomCard: (state, action: PayloadAction<SetBottomCardDto>) => {
+    //   state.chest[action.payload.index].bottomCard = action.payload.card
+    // },
     removeAllCards: state => {
       state.hand = []
       state.chest = []

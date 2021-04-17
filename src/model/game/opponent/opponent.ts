@@ -1,6 +1,6 @@
 import { OpponentDeck } from '../deck/opponent-deck'
 
 export interface Opponent {
-  playerId: number
+  playerUid: string
   hand: OpponentDeck
 }
